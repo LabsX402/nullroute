@@ -8,8 +8,9 @@ All transactions on Solana devnet. Click to verify on Explorer.
 
 | Item | Address | Explorer |
 |------|---------|----------|
-| Program | `8jrMsGNM9HwmPU94cotLQCxGu15iW7Mt3WZeggfwvv2x` | [View](https://explorer.solana.com/address/8jrMsGNM9HwmPU94cotLQCxGu15iW7Mt3WZeggfwvv2x?cluster=devnet) |
-| PDOX Token | `4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF` | [View](https://explorer.solana.com/address/4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF?cluster=devnet) |
+| Program | `2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV` | [View](https://solscan.io/account/2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV?cluster=devnet) |
+| IDL Account | `FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS` | [View](https://solscan.io/account/FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS?cluster=devnet) |
+| PDOX Token | `4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF` | [View](https://solscan.io/token/4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF?cluster=devnet) |
 
 ---
 
@@ -106,12 +107,18 @@ Verify at [TestLabs](https://labsx402.github.io/test/docs/test.html)
 ### 1. Check Program Exists
 
 ```bash
-solana program show 8jrMsGNM9HwmPU94cotLQCxGu15iW7Mt3WZeggfwvv2x --url devnet
+solana program show 2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV --url devnet
 ```
 
 Expected output includes:
-- `Program Id: 8jrMsGNM9HwmPU94cotLQCxGu15iW7Mt3WZeggfwvv2x`
+- `Program Id: 2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV`
 - `Executable: true`
+
+### 1b. Fetch IDL (Anchor)
+
+```bash
+anchor idl fetch 2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV --provider.cluster devnet
+```
 
 ### 2. Check Token Exists
 
@@ -152,12 +159,23 @@ Controlled by deployer during devnet testing
 
 | Event | Approximate Date |
 |-------|------------------|
-| Program deployed | Nov 2024 |
-| First batch settled | Nov 2024 |
-| Anonymous payment test | Nov 2024 |
-| Token minted | Nov 2024 |
+| Token minted (PDOX) | Nov 29, 2025 |
+| Program v2.0.2 deployed | Nov 30, 2025 |
+| IDL uploaded | Nov 30, 2025 |
+| Stack overflow fixes | Nov 30, 2025 |
 
 *Exact timestamps visible in Explorer TX details*
+
+---
+
+## Deploy Info (v2.0.2)
+
+```
+Program ID: 2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV
+IDL Account: FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS
+Deploy TX: 22nA19rTqfatoNCvMWR3vUf44u7yQc4jsYcCoG47eXEcGP8wQsGAEpL4KQq6cF6kEP387XEX8iJKuE1xX7FgRvAK
+Deployer: 3XBBYhqcV5fdF1j8Bs97wcAbj9AYEeVHcxZipaFcefr3
+```
 
 ---
 
@@ -165,5 +183,5 @@ Controlled by deployer during devnet testing
 
 This document updated when new verified tests are run.
 
-Last update: 2024-11-30
+Last update: 2025-11-30
 

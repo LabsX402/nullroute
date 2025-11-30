@@ -3,8 +3,9 @@
 Anonymous payment infrastructure on Solana.
 
 **Status:** Devnet live  
-**Program:** `8jrMsGNM9HwmPU94cotLQCxGu15iW7Mt3WZeggfwvv2x`  
-**Token:** `4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF` (PDOX, Token-2022)
+**Program:** `2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV`  
+**IDL:** `FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS`  
+**Token:** `4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF` (PDOX, Token-2022, 3% fee)
 
 ---
 
@@ -12,12 +13,14 @@ Anonymous payment infrastructure on Solana.
 
 | Component | Status | Proof |
 |-----------|--------|-------|
-| On-chain program | ✓ Deployed | [Explorer](https://explorer.solana.com/address/8jrMsGNM9HwmPU94cotLQCxGu15iW7Mt3WZeggfwvv2x?cluster=devnet) |
+| On-chain program | ✓ Deployed | [Explorer](https://solscan.io/account/2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV?cluster=devnet) |
+| IDL (on-chain) | ✓ Uploaded | [IDL Account](https://solscan.io/account/FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS?cluster=devnet) |
+| PDOX Token | ✓ Minted | [Token](https://solscan.io/token/4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF?cluster=devnet) |
 | GlobalConfig PDA | ✓ Initialized | Program-owned |
-| Batch settlement | ✓ Working | [TX](https://explorer.solana.com/tx/5b1MtoyP1BRVn7SgfQtKCTyHDE1mfFD4k1oC8DtJmjnexrSWaBRvxJ1HgP6GYFYwZmzoVNpfwW2cVuLF1HVo9YJo?cluster=devnet) |
+| Batch settlement | ✓ Working | Tested |
 | Replay protection | ✓ Working | Tested |
-| Anonymous payment | ✓ Working | [TX](https://explorer.solana.com/tx/32YDUGw5kSsMSJ8KvdAwaAAKxJEA3YLnN8dvjx5DCb6cy49xXPa4NkpAeE5K7y3LDogyiFxSBDBgHcwkhGsxeTvh?cluster=devnet) |
-| Token transfers | ✓ Working | [TX](https://explorer.solana.com/tx/4LaL3ctzQYWuRGBUDWnL2TuMdeDJh2iEYWB6PgAJh3GzNhvrouKdcBg1ed3Gafd8euXcyibBrnPg4euacouEcjLC?cluster=devnet) |
+| Anonymous payment | ✓ Working | Tested |
+| Token transfers | ✓ Working | 3% fee auto-collected |
 
 ---
 
@@ -122,7 +125,12 @@ Trade-off: faster and cheaper, but not information-theoretic.
 
 ### Check Program Exists
 ```bash
-solana program show 8jrMsGNM9HwmPU94cotLQCxGu15iW7Mt3WZeggfwvv2x --url devnet
+solana program show 2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV --url devnet
+```
+
+### Fetch IDL
+```bash
+anchor idl fetch 2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV --provider.cluster devnet
 ```
 
 ### Check Token Exists

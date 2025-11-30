@@ -3,10 +3,9 @@
 Anonymous payment infrastructure on Solana.
 
 **Status:** Devnet live  
-**Program:** `2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV`  
-**IDL:** `FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS`  
-**Token:** `4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF` (PDOX, Token-2022, 3% fee)  
-**LP Pool:** `3kScidMNvzT6m5bXn8VwEP3CrzdA57DngzpDDbSn9Jvc` (Raydium CLMM, SOL/PDOX)
+**Program:** `7j4qvD77zadbvrKYmahMQbFS5f8tEseW9kj62LYuWmer`  
+**IDL:** `65SqUUSwKaKfrc2jjr7Jrrb63CHbR4x61ojgtYcH5FeE`  
+**Token (V2):** `5673DfyfMiP2vZTAwEr7t6pwZkQk1TTyLP7R8Lw8G41B` (PDOX, Token-2022, 3% fee, 10M supply)
 
 ---
 
@@ -14,10 +13,10 @@ Anonymous payment infrastructure on Solana.
 
 | Component | Status | Proof |
 |-----------|--------|-------|
-| On-chain program | ✓ Deployed | [Explorer](https://solscan.io/account/2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV?cluster=devnet) |
-| IDL (on-chain) | ✓ Uploaded | [IDL Account](https://solscan.io/account/FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS?cluster=devnet) |
-| PDOX Token | ✓ Minted | [Token](https://solscan.io/token/4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF?cluster=devnet) |
-| **LP Pool (Raydium)** | ✓ Created | [Pool](https://solscan.io/account/3kScidMNvzT6m5bXn8VwEP3CrzdA57DngzpDDbSn9Jvc?cluster=devnet) |
+| On-chain program | ✓ Deployed | [Explorer](https://solscan.io/account/7j4qvD77zadbvrKYmahMQbFS5f8tEseW9kj62LYuWmer?cluster=devnet) |
+| IDL (on-chain) | ✓ Uploaded | [IDL Account](https://solscan.io/account/65SqUUSwKaKfrc2jjr7Jrrb63CHbR4x61ojgtYcH5FeE?cluster=devnet) |
+| PDOX Token V2 | ✓ Minted | [Token](https://solscan.io/token/5673DfyfMiP2vZTAwEr7t6pwZkQk1TTyLP7R8Lw8G41B?cluster=devnet) |
+| **LP Pool** | ⏳ Pending | Need to create with new token |
 | GlobalConfig PDA | ✓ Initialized | Program-owned |
 | Batch settlement | ✓ Working | Tested |
 | Replay protection | ✓ Working | Tested |

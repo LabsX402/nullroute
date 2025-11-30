@@ -11,6 +11,7 @@ All transactions on Solana devnet. Click to verify on Explorer.
 | Program | `2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV` | [View](https://solscan.io/account/2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV?cluster=devnet) |
 | IDL Account | `FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS` | [View](https://solscan.io/account/FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS?cluster=devnet) |
 | PDOX Token | `4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF` | [View](https://solscan.io/token/4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF?cluster=devnet) |
+| **LP Pool (Raydium CLMM)** | `3kScidMNvzT6m5bXn8VwEP3CrzdA57DngzpDDbSn9Jvc` | [View](https://solscan.io/account/3kScidMNvzT6m5bXn8VwEP3CrzdA57DngzpDDbSn9Jvc?cluster=devnet) |
 
 ---
 
@@ -163,6 +164,7 @@ Controlled by deployer during devnet testing
 | Program v2.0.2 deployed | Nov 30, 2025 |
 | IDL uploaded | Nov 30, 2025 |
 | Stack overflow fixes | Nov 30, 2025 |
+| **Raydium CLMM Pool created** | Nov 30, 2025 |
 
 *Exact timestamps visible in Explorer TX details*
 
@@ -176,6 +178,34 @@ IDL Account: FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS
 Deploy TX: 22nA19rTqfatoNCvMWR3vUf44u7yQc4jsYcCoG47eXEcGP8wQsGAEpL4KQq6cF6kEP387XEX8iJKuE1xX7FgRvAK
 Deployer: 3XBBYhqcV5fdF1j8Bs97wcAbj9AYEeVHcxZipaFcefr3
 ```
+
+---
+
+## Liquidity Pool (Raydium CLMM)
+
+### Pool Creation TX
+
+```
+TX: 4aUcFMrFJBxainDaGwUUYg6YtX4zBrvKkEgN6Mcf4jRxo16GZQWR7A485vMRXuNEtJVFZEYTijrqywHtgECCapJX
+```
+
+[View on Explorer](https://explorer.solana.com/tx/4aUcFMrFJBxainDaGwUUYg6YtX4zBrvKkEgN6Mcf4jRxo16GZQWR7A485vMRXuNEtJVFZEYTijrqywHtgECCapJX?cluster=devnet)
+
+**Pool Details:**
+```
+Pool ID:     3kScidMNvzT6m5bXn8VwEP3CrzdA57DngzpDDbSn9Jvc
+Program:     devi51mZmdwUJGU9hjN27vEz64Gps7uUefqxg27EAtH (Raydium CLMM Devnet)
+Token A:     SOL (wSOL)
+Token B:     PDOX (Token-2022, 3% transfer fee)
+Price:       1 SOL = 20,000,000 PDOX
+Fee Rate:    0.25%
+Tick Spacing: 64
+```
+
+**What it proves:**
+- Raydium CLMM pool initialized successfully
+- Token-2022 with transfer fees works with Raydium
+- Pool ready for liquidity provision
 
 ---
 

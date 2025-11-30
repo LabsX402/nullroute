@@ -5,7 +5,8 @@ Anonymous payment infrastructure on Solana.
 **Status:** Devnet live  
 **Program:** `2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV`  
 **IDL:** `FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS`  
-**Token:** `4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF` (PDOX, Token-2022, 3% fee)
+**Token:** `4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF` (PDOX, Token-2022, 3% fee)  
+**LP Pool:** `3kScidMNvzT6m5bXn8VwEP3CrzdA57DngzpDDbSn9Jvc` (Raydium CLMM, SOL/PDOX)
 
 ---
 
@@ -16,6 +17,7 @@ Anonymous payment infrastructure on Solana.
 | On-chain program | ✓ Deployed | [Explorer](https://solscan.io/account/2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV?cluster=devnet) |
 | IDL (on-chain) | ✓ Uploaded | [IDL Account](https://solscan.io/account/FDnuHMzje5EsyWqJUiTScbUJwBfQUgmD5B6VKG1qC5xS?cluster=devnet) |
 | PDOX Token | ✓ Minted | [Token](https://solscan.io/token/4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF?cluster=devnet) |
+| **LP Pool (Raydium)** | ✓ Created | [Pool](https://solscan.io/account/3kScidMNvzT6m5bXn8VwEP3CrzdA57DngzpDDbSn9Jvc?cluster=devnet) |
 | GlobalConfig PDA | ✓ Initialized | Program-owned |
 | Batch settlement | ✓ Working | Tested |
 | Replay protection | ✓ Working | Tested |

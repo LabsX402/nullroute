@@ -5,7 +5,7 @@ Anonymous payment infrastructure on Solana.
 **Status:** Devnet live  
 **Program:** `7j4qvD77zadbvrKYmahMQbFS5f8tEseW9kj62LYuWmer`  
 **IDL:** `65SqUUSwKaKfrc2jjr7Jrrb63CHbR4x61ojgtYcH5FeE`  
-**Token (V2):** `5673DfyfMiP2vZTAwEr7t6pwZkQk1TTyLP7R8Lw8G41B` (PDOX, Token-2022, 3% fee, 10M supply)
+**Token (V3):** `9umyHgCSv6xuAv6bczUsR7hBKqyCAZCmPcc4eVhAGrfN` (PDOX, Token-2022, 3% fee, 10M supply)
 
 ---
 
@@ -15,8 +15,8 @@ Anonymous payment infrastructure on Solana.
 |-----------|--------|-------|
 | On-chain program | ✓ Deployed | [Explorer](https://solscan.io/account/7j4qvD77zadbvrKYmahMQbFS5f8tEseW9kj62LYuWmer?cluster=devnet) |
 | IDL (on-chain) | ✓ Uploaded | [IDL Account](https://solscan.io/account/65SqUUSwKaKfrc2jjr7Jrrb63CHbR4x61ojgtYcH5FeE?cluster=devnet) |
-| PDOX Token V2 | ✓ Minted | [Token](https://solscan.io/token/5673DfyfMiP2vZTAwEr7t6pwZkQk1TTyLP7R8Lw8G41B?cluster=devnet) |
-| **LP Pool** | ✓ Created | [Raydium CLMM](https://solscan.io/account/DKdARvMSzUaFhRELRxe323xQvohqdVGnHHbtr8CbPSDU?cluster=devnet) |
+| PDOX Token V3 | ✓ Minted | [Token](https://solscan.io/token/9umyHgCSv6xuAv6bczUsR7hBKqyCAZCmPcc4eVhAGrfN?cluster=devnet) |
+| **LP Pool** | ✓ Created | [Orca Whirlpool](https://www.orca.so/pools?chainId=solanaDevnet&tokens=So11111111111111111111111111111111111111112&tokens=9umyHgCSv6xuAv6bczUsR7hBKqyCAZCmPcc4eVhAGrfN) |
 | GlobalConfig PDA | ✓ Initialized | Program-owned |
 | Batch settlement | ✓ Working | Tested |
 | Replay protection | ✓ Working | Tested |
@@ -136,15 +136,11 @@ anchor idl fetch 7j4qvD77zadbvrKYmahMQbFS5f8tEseW9kj62LYuWmer --provider.cluster
 
 ### Check Token Exists
 ```bash
-spl-token display 5673DfyfMiP2vZTAwEr7t6pwZkQk1TTyLP7R8Lw8G41B --url devnet
+spl-token display 9umyHgCSv6xuAv6bczUsR7hBKqyCAZCmPcc4eVhAGrfN --url devnet
 ```
 
 ### Check LP Pool
-```bash
-# Pool ID: DKdARvMSzUaFhRELRxe323xQvohqdVGnHHbtr8CbPSDU
-# SOL Vault: 2vaGXhZgyvJgWbUptZ5vp1qHw6TFxXM5xwGTcRPeieag
-# PDOX Vault: CneDEaEB25Wv1LSGtixCfji3AwKVGXgp3HuKUaoZbi2C
-```
+Visit: https://www.orca.so/pools?chainId=solanaDevnet&tokens=So11111111111111111111111111111111111111112&tokens=9umyHgCSv6xuAv6bczUsR7hBKqyCAZCmPcc4eVhAGrfN
 
 ### Verify TX Signatures
 Click any TX link above. Check:
@@ -179,4 +175,3 @@ MIT
 - [TestLabs](https://labsx402.github.io/test/docs/test.html) - Verify compression/netting math
 - [Architecture Docs](./docs/ARCHITECTURE.md)
 - [Benchmark Details](./docs/BENCHMARKS.md)
-

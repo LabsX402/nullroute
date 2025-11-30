@@ -1,22 +1,52 @@
-MIT License
+Business Source License 1.1
 
-Copyright (c) 2024 LabsX402
+License text copyright (c) 2025 LabsX402
+Licensed work: PHANTOMGRID-Paradox
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Change Date: 2028-12-01
+Change License: MIT
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Usage Grant: You may use this software for non-commercial purposes only.
+Commercial use requires a separate license from LabsX402.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Parameters:
+- Licensor: LabsX402 (https://github.com/LabsX402)
+- Licensed Work: PHANTOMGRID-Paradox anonymous payment infrastructure
+- Additional Use Grant: None
+- Change Date: December 1, 2028
+- Change License: MIT License
 
+Terms:
+The Licensor hereby grants you the right to copy, modify, create derivative
+works, redistribute, and make non-production use of the Licensed Work.
+
+If your use of the Licensed Work does not comply with the requirements
+currently in effect as described in this License, you must purchase a
+commercial license from the Licensor, its affiliated entities, or authorized
+resellers.
+
+WHAT YOU CAN DO:
+✓ View, study, and learn from the code
+✓ Run on devnet/testnet for evaluation
+✓ Fork for personal/educational use
+✓ Build integrations for testing
+✓ Reference in research papers
+
+WHAT REQUIRES COMMERCIAL LICENSE:
+✗ Running in production with real funds
+✗ Offering as a service (SaaS)
+✗ Integrating into commercial products
+✗ Competing products using this architecture
+
+NOTICE:
+This software is provided "as is", without warranty of any kind.
+
+After the Change Date (December 1, 2028), this license converts to MIT,
+allowing full commercial use.
+
+For commercial licensing inquiries: [Contact via GitHub Issues]
+
+---
+
+This is NOT open source. This is "source available" with delayed open source.
+Inspired by MariaDB, CockroachDB, and Sentry licensing models.

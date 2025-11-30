@@ -16,7 +16,7 @@ Anonymous payment infrastructure on Solana.
 | On-chain program | ✓ Deployed | [Explorer](https://solscan.io/account/7j4qvD77zadbvrKYmahMQbFS5f8tEseW9kj62LYuWmer?cluster=devnet) |
 | IDL (on-chain) | ✓ Uploaded | [IDL Account](https://solscan.io/account/65SqUUSwKaKfrc2jjr7Jrrb63CHbR4x61ojgtYcH5FeE?cluster=devnet) |
 | PDOX Token V2 | ✓ Minted | [Token](https://solscan.io/token/5673DfyfMiP2vZTAwEr7t6pwZkQk1TTyLP7R8Lw8G41B?cluster=devnet) |
-| **LP Pool** | ⏳ Pending | Need to create with new token |
+| **LP Pool** | ✓ Created | [Raydium CLMM](https://solscan.io/account/DKdARvMSzUaFhRELRxe323xQvohqdVGnHHbtr8CbPSDU?cluster=devnet) |
 | GlobalConfig PDA | ✓ Initialized | Program-owned |
 | Batch settlement | ✓ Working | Tested |
 | Replay protection | ✓ Working | Tested |
@@ -126,17 +126,24 @@ Trade-off: faster and cheaper, but not information-theoretic.
 
 ### Check Program Exists
 ```bash
-solana program show 2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV --url devnet
+solana program show 7j4qvD77zadbvrKYmahMQbFS5f8tEseW9kj62LYuWmer --url devnet
 ```
 
 ### Fetch IDL
 ```bash
-anchor idl fetch 2R6Lus9psfB2dREDuC79ayfwd4peVfqG3Q42ca2iFhNV --provider.cluster devnet
+anchor idl fetch 7j4qvD77zadbvrKYmahMQbFS5f8tEseW9kj62LYuWmer --provider.cluster devnet
 ```
 
 ### Check Token Exists
 ```bash
-spl-token display 4ckvALSiB6Hii7iVY9Dt6LRM5i7xocBZ9yr3YGNtVRwF --url devnet
+spl-token display 5673DfyfMiP2vZTAwEr7t6pwZkQk1TTyLP7R8Lw8G41B --url devnet
+```
+
+### Check LP Pool
+```bash
+# Pool ID: DKdARvMSzUaFhRELRxe323xQvohqdVGnHHbtr8CbPSDU
+# SOL Vault: 2vaGXhZgyvJgWbUptZ5vp1qHw6TFxXM5xwGTcRPeieag
+# PDOX Vault: CneDEaEB25Wv1LSGtixCfji3AwKVGXgp3HuKUaoZbi2C
 ```
 
 ### Verify TX Signatures

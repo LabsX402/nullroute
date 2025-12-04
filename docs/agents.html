@@ -452,7 +452,7 @@
   <div class="tabs">
     <div class="tab active" data-tab="map">🗺️ Network Map</div>
     <div class="tab" data-tab="jobs">💼 Jobs</div>
-    <div class="tab" data-tab="deploy">📦 Deploy</div>
+    <div class="tab" data-tab="deploy">🛒 Agent Shop</div>
   </div>
   
   <!-- MAP TAB -->
@@ -920,14 +920,49 @@ function setupAgent(wallet, lat, lng, cityName) {
     isMe: true
   };
   
+  // Generate simulated agents
+  generateSimulatedAgents();
+  
   // Test network
   testNetwork();
   
   // Render
   renderAgents();
   renderYourAgent();
+  renderAgentList();
   
   console.log('Connected:', wallet, 'Location:', cityName, `(${lat.toFixed(2)}, ${lng.toFixed(2)})`);
+}
+
+function generateSimulatedAgents() {
+  const cityKeys = Object.keys(CITIES);
+  const numAgents = 12 + Math.floor(Math.random() * 20);
+  
+  agents = [];
+  for (let i = 0; i < numAgents; i++) {
+    const cityKey = cityKeys[Math.floor(Math.random() * cityKeys.length)];
+    const city = CITIES[cityKey];
+    const lat = city.lat + (Math.random() - 0.5) * 2;
+    const lng = city.lng + (Math.random() - 0.5) * 2;
+    
+    agents.push({
+      wallet: genWallet(),
+      lat: lat,
+      lng: lng,
+      city: city.name,
+      latency: 15 + Math.floor(Math.random() * 180),
+      bandwidth: 10 + Math.floor(Math.random() * 90),
+      capLevel: 1 + Math.floor(Math.random() * 5),
+      isMe: false
+    });
+  }
+}
+
+function genWallet() {
+  const c = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+  let r = '';
+  for (let i = 0; i < 44; i++) r += c[Math.floor(Math.random() * c.length)];
+  return r;
 }
 
 async function testNetwork() {

@@ -1198,9 +1198,10 @@ function setupAgent(wallet, lat, lng, cityName) {
   // Test network
   testNetwork();
   
-  // Render
+  // Render all
   renderAgents();
   renderYourAgent();
+  renderAgentList(); // Show connected agents list
   
   console.log('Connected:', wallet, 'Location:', cityName, `(${lat.toFixed(2)}, ${lng.toFixed(2)})`);
 }
@@ -1682,7 +1683,10 @@ const originalOnConnected = onConnected;
 onConnected = function(wallet) {
   originalOnConnected(wallet);
   initLiveJobs();
-  renderAgentList();
+  // Force render agent list after small delay to ensure myAgent is set
+  setTimeout(() => {
+    renderAgentList();
+  }, 500);
 };
 
 // ============== AGENT CONFIG ==============

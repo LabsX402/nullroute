@@ -838,42 +838,45 @@ function onConnected(wallet) {
   document.getElementById('statusBadge').textContent = 'ONLINE';
   document.getElementById('statusBadge').style.background = 'var(--cyan)';
   
-  // Try browser geolocation first (more accurate)
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        // Got real coords
-        const cityName = getNearestCity(pos.coords.latitude, pos.coords.longitude);
-        setupAgent(wallet, pos.coords.latitude, pos.coords.longitude, cityName);
-      },
-      () => {
-        // Fallback to timezone
-        fallbackToTimezone(wallet);
-      },
-      { timeout: 3000, maximumAge: 300000 }
-    );
-  } else {
-    fallbackToTimezone(wallet);
-  }
-}
-
-function fallbackToTimezone(wallet) {
+  // Get city from timezone (most reliable for city NAME)
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const city = CITIES[tz] || { lat: 51.5, lng: 0, name: tz.split('/')[1] || 'Unknown' };
-  setupAgent(wallet, city.lat, city.lng, city.name);
-}
-
-function getNearestCity(lat, lng) {
-  let nearest = 'Unknown';
-  let minDist = Infinity;
-  for (const [tz, city] of Object.entries(CITIES)) {
-    const dist = Math.sqrt(Math.pow(lat - city.lat, 2) + Math.pow(lng - city.lng, 2));
-    if (dist < minDist) {
-      minDist = dist;
-      nearest = city.name;
+  const tzCity = CITIES[tz];
+  
+  if (tzCity) {
+    // Use timezone city - most accurate for name
+    // Try to get real coords for more precise marker position
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          // Use real coords but timezone city name
+          setupAgent(wallet, pos.coords.latitude, pos.coords.longitude, tzCity.name);
+        },
+        () => {
+          // Use timezone city coords
+          setupAgent(wallet, tzCity.lat, tzCity.lng, tzCity.name);
+        },
+        { timeout: 3000, maximumAge: 300000 }
+      );
+    } else {
+      setupAgent(wallet, tzCity.lat, tzCity.lng, tzCity.name);
+    }
+  } else {
+    // Unknown timezone - try geolocation
+    const fallbackName = tz.split('/')[1] || 'Unknown';
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setupAgent(wallet, pos.coords.latitude, pos.coords.longitude, fallbackName);
+        },
+        () => {
+          setupAgent(wallet, 51.5, 0, fallbackName);
+        },
+        { timeout: 3000 }
+      );
+    } else {
+      setupAgent(wallet, 51.5, 0, fallbackName);
     }
   }
-  return nearest;
 }
 
 function setupAgent(wallet, lat, lng, cityName) {
